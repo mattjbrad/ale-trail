@@ -22,6 +22,6 @@ routes.forEach((route) => {
     lookup[hash(route)] = route;
 });
 
-console.log('lookup', lookup);
+console.log('Routes have been generated succesfully');
 
 module.exports = lookup;

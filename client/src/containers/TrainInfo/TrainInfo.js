@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import Dropdown from '../../components/UI/Dropdown/Dropdown';
 import stationLookup from '../../ref/stationLookup';
+
 const axios = require('axios');
 
 export default class TrainInfo extends Component {
@@ -9,7 +10,7 @@ export default class TrainInfo extends Component {
 	state = {
 		route: [],
 		dir: null,
-		currentStop: 'syb',
+		currentStop: null,
 		nextStop: null,
 		trains: []
 	}
@@ -35,12 +36,21 @@ export default class TrainInfo extends Component {
 		this.setRouteData(routeHash);
 	}
 
+	currentStopChangedHandler = (event) => {
+		this.setState({currentStop:event.target.value});
+	}
 	render() {
-		
+
 		return (
 			<div>
 				<h2>Train Details</h2>
-				<Dropdown options={this.state.route} lookup={stationLookup} value='location'/>
+				<Dropdown 
+					options={this.state.route}
+					lookup={stationLookup}
+					value={this.props.currentStop}
+					display='location'
+					change={this.currentStopChangedHandler}
+				/>
 			</div>
 		)
 	}

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 const hash = require('js-hash-code');
-const axios = require('axios');
 
 export default class PubRoute extends Component {
 

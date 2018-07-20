@@ -1,0 +1,15 @@
+.Button{
+    border: none;
+    border-radius: 6px;
+    background-color: #BC2C1A;
+    color: #E8F5FF;
+    padding: 8px;
+    font-size: 1.3em;
+    transition-duration: 0.5s;
+}
+
+.Button:hover{
+    background-color: #781D11;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}

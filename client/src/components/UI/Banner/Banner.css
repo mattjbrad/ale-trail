@@ -1,0 +1,12 @@
+.Banner{
+    background: #272635;
+    height: 200px;
+    color:#F8F8F8;
+}
+
+.Banner h1 {
+    margin:0px;
+    text-align: center;
+    padding: 30px;
+    font-size: 7em;
+}

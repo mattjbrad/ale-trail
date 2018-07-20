@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
 
+import Heading from '../../components/UI/Heading/Heading';
+import Button from '../../components/UI/Button/Button';
+
+import classes from './PubRoute.css';
+
 const hash = require('js-hash-code');
 
 export default class PubRoute extends Component {
@@ -27,27 +32,9 @@ export default class PubRoute extends Component {
     }
 
     submitRouteHander = () => {
-        // console.log('Submitting Route');
-        // const route = this.getCurrentRoute(this.state.stops);
-        // console.log(route);
-        // const hashedRoute = hash(route);
-        // console.log(hashedRoute);
-
-        // axios.post('/trains', {from:'MAN', to: 'SYB'})
-        //     .then((res) => {
-        //         if(res.status===200){
-        //             this.trainDataHandler(res.data);
-        //         }
-        //         this.props.history.push(`/route/${hashedRoute}`);
-        //     }).catch((err) => {
-        //         this.setState({trains:[]});
-        //         console.log(err);
-        //     })
-
         const route = this.getCurrentRoute(this.state.stops);
         const hashedRoute = hash(route);
         this.props.history.push(`/route/${hashedRoute}`);
-
     }
 
     //move to seperate file as it is just a data function
@@ -72,9 +59,9 @@ export default class PubRoute extends Component {
 
     render() {
         return (
-            <div>
-                <h2>Pub Route Chooser</h2>
-                <button onClick={this.submitRouteHander}>Submit</button>
+            <div className={classes.PubRoute}>
+                <Heading>Choose your route</Heading>
+                <Button clicked={this.submitRouteHander} text='Select'/>
             </div>
         )
     }

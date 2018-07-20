@@ -1,7 +1,8 @@
 import React from 'react'
+import classes from './Button.css';
 
 export default (props) => {
     return (
-        <button onClick={props.clicked}>{props.text}</button>
+        <button className={classes.Button} onClick={props.clicked}>{props.text}</button>
     )
 }

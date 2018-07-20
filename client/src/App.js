@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import PubRoute from './containers/PubRoute/PubRoute';
 import TrainInfo from './containers/TrainInfo/TrainInfo';
+
+import Banner from './components/UI/Banner/Banner';
 // import './App.css';
 
 class App extends Component {
@@ -9,7 +11,7 @@ class App extends Component {
 		return (
 			<BrowserRouter>
 				<div className="App">
-					<h1>Ale Trail</h1>
+					<Banner text="Real Ale Trail" />
 					<Route exact path="/" component={PubRoute} />
 					<Route path="/route/:id" component={TrainInfo} />
 				</div>

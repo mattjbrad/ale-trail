@@ -14,10 +14,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, 'client/build')));
+const lookupObj = lookup.lookup;
 
-const lookupObj = lookup;
-
-app.get('/route/:hash', (req, res) => {
+app.get('/lookup/:hash', (req, res) => {
     res.send(lookupObj[req.params.hash]);
 });
 

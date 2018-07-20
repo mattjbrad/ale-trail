@@ -24,4 +24,4 @@ routes.forEach((route) => {
 
 console.log('Routes have been generated succesfully');
 
-module.exports = lookup;
+module.exports.lookup = lookup;

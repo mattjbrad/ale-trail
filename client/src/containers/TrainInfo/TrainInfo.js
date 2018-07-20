@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import Trains from '../../components/Trains/Trains';
 import Dropdown from '../../components/UI/Dropdown/Dropdown';
 import Button from '../../components/UI/Button/Button';
-
 import stationLookup from '../../ref/stationLookup';
 
 const axios = require('axios');

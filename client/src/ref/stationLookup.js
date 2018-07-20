@@ -39,6 +39,16 @@ const stationLookup = {
         pub: 'Cellar Bar',
         url: 'https://www.jdwetherspoon.com/'
     },
+    'lds' : {
+        location: 'Leeds',
+        pub: 'Cellar Bar',
+        url: 'https://www.jdwetherspoon.com/'
+    },
+    'man' : {
+        location: 'Manchester',
+        pub: 'Cellar Bar',
+        url: 'https://www.jdwetherspoon.com/'
+    },
 };
 
 module.exports = stationLookup;

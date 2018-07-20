@@ -35,7 +35,6 @@ export default class TrainInfo extends Component {
 
 	componentDidMount = () => {
 		const routeHash = this.getURLHash();
-		// console.log(routeHash);
 		this.setRouteData(routeHash);
 	}
 
@@ -63,7 +62,6 @@ export default class TrainInfo extends Component {
 	trainDataHandler = (trainData) => {
 		let newTrains = [];
 		if (trainData.length>1){
-
 			trainData.forEach((train, i) => {
 				let platform = null;
 				if (train.platform){
@@ -75,9 +73,9 @@ export default class TrainInfo extends Component {
 					delay: train.etd[0]
 				};
 			});
-			
-			console.log(newTrains);
 			this.setState({trains:newTrains});
+		} else {
+			this.setState({trains:[]});
 		}
 	};
 
@@ -112,6 +110,9 @@ export default class TrainInfo extends Component {
 		return (
 			<div>
 				<h2>Train Details</h2>
+				<a href="/">
+					<Button text="Change Route"></Button>
+				</a>
 				<Dropdown 
 					options={this.state.route}
 					lookup={stationLookup}

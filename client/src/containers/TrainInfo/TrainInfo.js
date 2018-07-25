@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import Trains from '../../components/Trains/Trains';
 import Dropdown from '../../components/UI/Dropdown/Dropdown';
 import Button from '../../components/UI/Button/Button';
+import Spinner from '../../components/UI/Spinner/Spinner';
+
 import stationLookup from '../../ref/stationLookup';
 
 import classes from './TrainInfo.css';
@@ -44,7 +46,7 @@ export default class TrainInfo extends Component {
 	}
 
 	getTrainsHandler = () => {
-		console.log('trains');
+		this.setState({loadingTrains:true});
 		const nextStation = this.getNextStation();
 		if (nextStation){
 			axios.post('/trains', { from:this.state.currentStop, to:nextStation})
@@ -78,6 +80,7 @@ export default class TrainInfo extends Component {
 		} else {
 			this.setState({trains:[]});
 		}
+		this.setState({loadingTrains:false});
 	};
 
 	getNextStation = () => {
@@ -104,13 +107,16 @@ export default class TrainInfo extends Component {
 
 	render() {
 		let trains;
-		if (this.state.trains.length>0){
-			trains = <Trains data={this.state.trains} />
+		if(this.state.loadingTrains){
+			trains = <Spinner />
+		} else {
+			if (this.state.trains.length>0){
+				trains = <Trains data={this.state.trains} />
+			}
 		}
 
 		return (
 			<div className={classes.TrainInfo}>
-				
 				<div>
 					<a href="/">
 						<Button text="Change Route"></Button>

@@ -18,7 +18,8 @@ export default class TrainInfo extends Component {
 		dir: null,
 		currentStop: null,
 		trains: [],
-		loadingTrains: false
+		loadingTrains: false,
+		manualLocationSelect: false,
 	}
 
 	getURLHash = () => {
@@ -115,13 +116,18 @@ export default class TrainInfo extends Component {
 			}
 		}
 
-		return (
-			<div className={classes.TrainInfo}>
-				<div>
-					<a href="/">
-						<Button text="Change Route"></Button>
-					</a>
+		let currentLocation;
+		if(this.state.currentStop){
+			currentLocation = ( 
+				<div className={classes.section}>
+					<p className={classes.locationText}>You are currently in <strong>{stationLookup[this.state.currentStop].location}</strong>. <a href="">Incorrect?</a> </p>
 				</div>
+			);
+		}
+
+		let chooseLocation;
+		if(this.state.manualLocationSelect){
+			chooseLocation = ( 
 				<div className={classes.section}>
 					<Dropdown 
 						options={this.state.route}
@@ -132,12 +138,23 @@ export default class TrainInfo extends Component {
 						unassigned='Where are you?'
 					/>
 				</div>
-				<Button 
-					clicked={this.getTrainsHandler}
-					text="Get Trains" 
-				/>
+			)
+		}
+
+		return (
+			<div className={classes.TrainInfo}>
+				{currentLocation}
+				{chooseLocation}
+				<Button clicked={this.getTrainsHandler}>
+					<i className="fas fa-train"></i>
+				</Button>
 				<div className={classes.section}>
 					{trains}
+				</div>
+				<div>
+					<a href="/">
+						<Button ><i className="far fa-edit"></i></Button>
+					</a>
 				</div>
 			</div>
 		)

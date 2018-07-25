@@ -5,3 +5,7 @@
 .section {
     margin: 15px;
 }
+
+.locationText{
+    font-size: 1.5em;
+}

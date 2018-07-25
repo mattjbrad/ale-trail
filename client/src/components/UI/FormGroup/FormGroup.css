@@ -1,0 +1,11 @@
+.FormGroup {
+}
+
+.FormGroup input {
+    margin: 10px;
+}
+
+.FormGroup p {
+    font-size: 1.5em;
+    margin: 0;
+}

@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 
 import Heading from '../../components/UI/Heading/Heading';
 import Button from '../../components/UI/Button/Button';
-
+import Route from '../../components/Route/Route';
 import classes from './PubRoute.css';
-
 const hash = require('js-hash-code');
 
 export default class PubRoute extends Component {
@@ -61,6 +60,7 @@ export default class PubRoute extends Component {
         return (
             <div className={classes.PubRoute}>
                 <Heading>Choose your route</Heading>
+                <Route />
                 <Button clicked={this.submitRouteHander} text='Select'/>
             </div>
         )

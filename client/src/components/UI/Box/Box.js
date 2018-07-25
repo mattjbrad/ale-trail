@@ -1,9 +1,10 @@
 import React from 'react'
+import classes from './Box.css';
 
 export default (props) => {
   return (
-    <div style={{width:'30%', border:'solid 1px black', height:'130px'}}>
-      {props.children}
-    </div>
+      <div className={classes.Box}>
+        {props.children}
+      </div>
   )
 }

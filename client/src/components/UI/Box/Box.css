@@ -1,0 +1,19 @@
+.Box {
+    width: 30%;
+    min-width: 400px;
+    margin: 20px auto;
+}
+
+.Box div {
+    width: 95%;
+    /* border:solid 4px #80c8ff; */
+    border-radius: 20px;
+    margin: auto;
+    background: #272635;
+    box-shadow: rgba(0.2, 0.2, 0.2, 0.05) 3px 3px;
+    box-shadow: rgba(0.2, 0.2, 0.2, 0.05) 6px 6px 8px;
+    box-shadow: rgba(0.2, 0.2, 0.2, 0.1) 1px 1px;
+    padding: 5px;
+    color:white;
+    font-size: 1.2em;
+}

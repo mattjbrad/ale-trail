@@ -1,4 +1,5 @@
 import React from 'react'
+import classes from './Dropdown.css';
 
 export default (props) => {
     let options = props.options.map((option) => {
@@ -6,7 +7,7 @@ export default (props) => {
     })
     
     return (
-        <select onChange={props.change}>
+        <select className={classes.Dropdown} onChange={props.change}>
             <option key='blank' value='blank'>{props.unassigned}</option>
             {options}
         </select>

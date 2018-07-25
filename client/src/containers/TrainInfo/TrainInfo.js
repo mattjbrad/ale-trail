@@ -5,6 +5,8 @@ import Dropdown from '../../components/UI/Dropdown/Dropdown';
 import Button from '../../components/UI/Button/Button';
 import stationLookup from '../../ref/stationLookup';
 
+import classes from './TrainInfo.css';
+
 const axios = require('axios');
 
 export default class TrainInfo extends Component {
@@ -107,24 +109,30 @@ export default class TrainInfo extends Component {
 		}
 
 		return (
-			<div>
-				<h2>Train Details</h2>
-				<a href="/">
-					<Button text="Change Route"></Button>
-				</a>
-				<Dropdown 
-					options={this.state.route}
-					lookup={stationLookup}
-					value={this.props.currentStop}
-					display='location'
-					change={this.currentStopChangedHandler}
-					unassigned='Where are you?'
-				/>
+			<div className={classes.TrainInfo}>
+				
+				<div>
+					<a href="/">
+						<Button text="Change Route"></Button>
+					</a>
+				</div>
+				<div className={classes.section}>
+					<Dropdown 
+						options={this.state.route}
+						lookup={stationLookup}
+						value={this.props.currentStop}
+						display='location'
+						change={this.currentStopChangedHandler}
+						unassigned='Where are you?'
+					/>
+				</div>
 				<Button 
 					clicked={this.getTrainsHandler}
 					text="Get Trains" 
 				/>
-				{trains}
+				<div className={classes.section}>
+					{trains}
+				</div>
 			</div>
 		)
 	}

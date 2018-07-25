@@ -16,7 +16,7 @@ export default class TrainInfo extends Component {
 	state = {
 		route: [],
 		dir: null,
-		currentStop: null,
+		currentStop: 'syb',
 		trains: [],
 		loadingTrains: false,
 		manualLocationSelect: false,
@@ -105,6 +105,11 @@ export default class TrainInfo extends Component {
 	   return nextStop;
 	 
 	 }
+
+	toggleStationChooser = () => {
+		const show = this.state.manualLocationSelect;
+		this.setState({manualLocationSelect:!show});
+	}
 
 	render() {
 		let trains;

@@ -1,6 +1,6 @@
 const stationLookup = {
     'syb' : {
-        location: 'Staylybridge',
+        location: 'Stalybridge',
         pub: 'Station Buffet Bar',
         url: 'https://www.jdwetherspoon.com/'
     },

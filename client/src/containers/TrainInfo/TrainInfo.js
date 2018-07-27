@@ -67,6 +67,7 @@ export default class TrainInfo extends Component {
 		let newTrains = [];
 		if (trainData.length>1){
 			trainData.forEach((train, i) => {
+				this.setState({trainResults:true});
 				let platform = null;
 				if (train.platform){
 					platform = train.platform[0];
@@ -79,7 +80,7 @@ export default class TrainInfo extends Component {
 			});
 			this.setState({trains:newTrains});
 		} else {
-			this.setState({trains:[]});
+			this.setState({trains:[], trainResults:false});
 		}
 		this.setState({loadingTrains:false});
 	};
@@ -116,9 +117,7 @@ export default class TrainInfo extends Component {
 		if(this.state.loadingTrains){
 			trains = <Spinner />
 		} else {
-			if (this.state.trains.length>0){
-				trains = <Trains data={this.state.trains} />
-			}
+			trains = <Trains data={this.state.trains} />
 		}
 
 		let currentLocation;

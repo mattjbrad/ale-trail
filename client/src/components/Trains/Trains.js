@@ -6,7 +6,7 @@ export default (props) => {
     const trainData = props.data;
     let trains;
     let display = null;
-    if (trainData){
+    if (trainData.length>0){
         trains = trainData.map((train, i) => {
             return <Train key={i} data={train} index={i}/>
         });
@@ -18,6 +18,8 @@ export default (props) => {
                 </div>
             </div>
         )
+    } else {
+        display = (<h2>No trains have been found</h2>)
     }
 
     return display;

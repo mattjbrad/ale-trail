@@ -9,6 +9,7 @@ import stationLookup from '../../ref/stationLookup';
 
 import classes from './TrainInfo.css';
 
+const location = require('../../whereami');
 const axios = require('axios');
 
 export default class TrainInfo extends Component {
@@ -16,10 +17,11 @@ export default class TrainInfo extends Component {
 	state = {
 		route: [],
 		dir: null,
-		currentStop: 'syb',
+		currentStop: 'btl',
 		trains: [],
 		loadingTrains: false,
 		manualLocationSelect: false,
+		nextStop: null
 	}
 
 	getURLHash = () => {
@@ -85,7 +87,7 @@ export default class TrainInfo extends Component {
 		this.setState({loadingTrains:false});
 	};
 
-	getNextStation = () => {
+	getNextStation = (callback) => {
 		const visitingStops = [...this.state.route];
 		let nextStop = null;
 	 
@@ -100,16 +102,22 @@ export default class TrainInfo extends Component {
 			} else {
 				nextStop = visitingStops[index-1];
 			}
-			   this.setState({nextStop:nextStop});
+			// this.setState({nextStop:nextStop});
 		}
 	   
 	   return nextStop;
-	 
+		callback();
 	 }
 
 	toggleStationChooser = () => {
 		const show = this.state.manualLocationSelect;
 		this.setState({manualLocationSelect:!show});
+	}
+
+	getLocationHandler = () => {
+		location.checkLocation((nearest) => {
+			this.setState({currentStop:nearest.loc});
+		});
 	}
 
 	render() {
@@ -126,9 +134,15 @@ export default class TrainInfo extends Component {
 			if (this.state.manualLocationSelect){
 				toggleText = 'Use GPS';
 			}
+			const current = <p className={classes.locationText}>You are currently in <strong>{stationLookup[this.state.currentStop].location}</strong>. <a href="#" onClick={this.toggleStationChooser}>{toggleText}</a></p>
+			let next;
+			if(this.getNextStation()){
+				next = <p className={classes.locationText}>Your next stop is <strong>{stationLookup[this.getNextStation()].location}</strong></p>
+			}
 			currentLocation = ( 
 				<div className={classes.section}>
-					<p className={classes.locationText}>You are currently in <strong>{stationLookup[this.state.currentStop].location}</strong>. <a href="#" onClick={this.toggleStationChooser}>{toggleText}</a> </p>
+					{current}
+					{next}
 				</div>
 			);
 		}
@@ -155,6 +169,9 @@ export default class TrainInfo extends Component {
 				{chooseLocation}
 				<Button clicked={this.getTrainsHandler}>
 					<i className="fas fa-train"></i>
+				</Button>
+				<Button clicked={this.getLocationHandler}>
+					location
 				</Button>
 				<div className={classes.section}>
 					{trains}

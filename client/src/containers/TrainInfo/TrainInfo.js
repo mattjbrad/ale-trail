@@ -123,9 +123,13 @@ export default class TrainInfo extends Component {
 
 		let currentLocation;
 		if(this.state.currentStop){
+			let toggleText = 'Incorrect?';
+			if (this.state.manualLocationSelect){
+				toggleText = 'Use GPS';
+			}
 			currentLocation = ( 
 				<div className={classes.section}>
-					<p className={classes.locationText}>You are currently in <strong>{stationLookup[this.state.currentStop].location}</strong>. <a href="#" onClick={this.toggleStationChooser}>Incorrect?</a> </p>
+					<p className={classes.locationText}>You are currently in <strong>{stationLookup[this.state.currentStop].location}</strong>. <a href="#" onClick={this.toggleStationChooser}>{toggleText}</a> </p>
 				</div>
 			);
 		}

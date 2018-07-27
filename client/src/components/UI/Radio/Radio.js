@@ -8,7 +8,7 @@ export default (props) => {
 				<label htmlFor={props.id}>{props.label}</label>
 			</div>
 			<div>
-				<input type="radio" id={props.id} name={props.name} value={props.value}/>
+				<input className={classes.Radio} type="radio" id={props.id} name={props.name} value={props.value}/>
 			</div>
 		</div>
 	)

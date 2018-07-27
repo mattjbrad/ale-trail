@@ -8,7 +8,7 @@ export default (props) => {
 				<label htmlFor={props.id}>{props.label}</label>
 			</div>
 			<div>
-				<input type="checkbox" id={props.id} name={props.name} value={props.value} />
+				<input type="checkbox" className={classes.Checkbox}id={props.id} name={props.name} value={props.value} />
 			</div>
 		</div>
 	)

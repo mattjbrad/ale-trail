@@ -1,4 +1,4 @@
-const hash = require('js-hash-code');
+const hash = require('object-hash');
 
 const pubs = ['syb', 'gnf', 'msn', 'swt', 'hud', 'mir', 'dew', 'btl'];
 // const pubs = ['syb', 'gnf', 'msn'];

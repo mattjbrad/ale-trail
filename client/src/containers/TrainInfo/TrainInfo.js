@@ -125,7 +125,7 @@ export default class TrainInfo extends Component {
 		if(this.state.currentStop){
 			currentLocation = ( 
 				<div className={classes.section}>
-					<p className={classes.locationText}>You are currently in <strong>{stationLookup[this.state.currentStop].location}</strong>. <a href="">Incorrect?</a> </p>
+					<p className={classes.locationText}>You are currently in <strong>{stationLookup[this.state.currentStop].location}</strong>. <a href="#" onClick={this.toggleStationChooser}>Incorrect?</a> </p>
 				</div>
 			);
 		}

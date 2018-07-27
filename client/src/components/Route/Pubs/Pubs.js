@@ -3,25 +3,27 @@ import Pub from './Pub/Pub';
 import FormGroup from '../../UI/FormGroup/FormGroup';
 
 const lookup = require('../../../ref/stationLookup');
-const pubs = require('../../../ref/pubs');
 
-export default () => {
-  const pubElems = pubs.map((pub) => {
-    return (
-      <Pub
-        id={pub}
-        name='route'
-        value={pub}
-        label={lookup[pub].location}
-        key={pub}
-      />
-    )
-  });
+export default (props) => {
 
-  return (
-    <FormGroup>
-      <p>Stops</p>
-      {pubElems}
-    </FormGroup>
-  )
+	const pubElems = props.pubs.map((pub) => {
+		return (
+			<Pub
+				id={pub.code}
+				name='route'
+				value={pub.code}
+				label={lookup[pub.code].location}
+				key={pub.code}
+				change={props.change}
+				checked={pub.visit}
+			/>
+		)
+	});
+
+	return (
+		<FormGroup>
+			<p>Stops</p>
+			{pubElems}
+		</FormGroup>
+	)
 }

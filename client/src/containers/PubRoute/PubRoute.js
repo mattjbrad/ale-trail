@@ -60,11 +60,28 @@ export default class PubRoute extends Component {
         this.setState({direction:event.target.value});
     }
 
+    stopChangeHandler = (event) => {
+        let stops = [...this.state.stops];
+        const pub = event.target.value;
+        const newStop = stops.find((stop)=>{
+            return stop.code === pub;
+        });
+        const stopIndex = stops.findIndex(i => i.code === newStop.code);
+        newStop.visit = !newStop.visit;
+        stops[stopIndex] = newStop;
+        this.setState({stops : stops});
+    }
+
     render() {
         return (
             <div className={classes.PubRoute}>
                 <Heading>Choose your route</Heading>
-                <Route directionChange={this.directionChangeHandler} directionValue={this.state.direction} />
+                <Route
+                    directionChange={this.directionChangeHandler}
+                    directionValue={this.state.direction}
+                    stopChange={this.stopChangeHandler}
+                    stopValue={this.state.stops}
+                />
                 <Button clicked={this.submitRouteHander} text='Select'/>
             </div>
         )

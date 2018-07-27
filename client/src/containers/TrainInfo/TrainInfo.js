@@ -17,11 +17,12 @@ export default class TrainInfo extends Component {
 	state = {
 		route: [],
 		dir: null,
-		currentStop: 'btl',
+		currentStop: null,
 		trains: [],
 		loadingTrains: false,
 		manualLocationSelect: false,
-		nextStop: null
+		nextStop: null,
+		loadingLocation: false,
 	}
 
 	getURLHash = () => {
@@ -42,6 +43,7 @@ export default class TrainInfo extends Component {
 	componentDidMount = () => {
 		const routeHash = this.getURLHash();
 		this.setRouteData(routeHash);
+		this.getLocationHandler();
 	}
 
 	currentStopChangedHandler = (event) => {
@@ -104,19 +106,24 @@ export default class TrainInfo extends Component {
 			}
 			// this.setState({nextStop:nextStop});
 		}
-	   
 	   return nextStop;
-		callback();
 	 }
 
 	toggleStationChooser = () => {
 		const show = this.state.manualLocationSelect;
-		this.setState({manualLocationSelect:!show});
+		this.setState({manualLocationSelect:!show}, () => {
+			if (show===true){
+				this.getLocationHandler();
+			}
+		});
 	}
 
 	getLocationHandler = () => {
+		this.setState({loadingLocation:true})
 		location.checkLocation((nearest) => {
-			this.setState({currentStop:nearest.loc});
+			this.setState({currentStop:nearest.loc}, () => {
+				this.setState({loadingLocation:false})
+			});
 		});
 	}
 
@@ -145,6 +152,8 @@ export default class TrainInfo extends Component {
 					{next}
 				</div>
 			);
+		} else {
+			currentLocation = <Spinner />
 		}
 
 		let chooseLocation;
@@ -169,9 +178,6 @@ export default class TrainInfo extends Component {
 				{chooseLocation}
 				<Button clicked={this.getTrainsHandler}>
 					<i className="fas fa-train"></i>
-				</Button>
-				<Button clicked={this.getLocationHandler}>
-					location
 				</Button>
 				<div className={classes.section}>
 					{trains}

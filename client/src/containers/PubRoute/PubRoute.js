@@ -4,7 +4,7 @@ import Heading from '../../components/UI/Heading/Heading';
 import Button from '../../components/UI/Button/Button';
 import Route from '../../components/Route/Route';
 import classes from './PubRoute.css';
-const hash = require('js-hash-code');
+const hash = require('hashcode');
 
 export default class PubRoute extends Component {
 
@@ -32,7 +32,7 @@ export default class PubRoute extends Component {
 
     submitRouteHander = () => {
         const route = this.getCurrentRoute(this.state.stops);
-        const hashedRoute = hash(route);
+        const hashedRoute = hash().value(route);
         this.props.history.push(`/route/${hashedRoute}`);
     }
 

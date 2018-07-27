@@ -13,7 +13,7 @@ export default (props) => {
 				<label htmlFor={props.id}>{props.label}</label>
 			</div>
 			<div>
-				<input checked={checked} onClick={props.change} className={classes.Radio} type="radio" id={props.id} name={props.name} value={props.value}/>
+				<input checked={checked} onChange={props.change} className={classes.Radio} type="radio" id={props.id} name={props.name} value={props.value}/>
 			</div>
 		</div>
 	)

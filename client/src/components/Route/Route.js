@@ -7,7 +7,7 @@ export default (props) => {
   console.log(props.pubs)
   return (
     <div>
-      <Direction />
+      <Direction change={props.directionChange} checked={props.directionValue}/>
       <Pubs />
     </div>
   )

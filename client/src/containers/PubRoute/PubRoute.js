@@ -56,11 +56,15 @@ export default class PubRoute extends Component {
         }
     };
 
+    directionChangeHandler = (event) => {
+        this.setState({direction:event.target.value});
+    }
+
     render() {
         return (
             <div className={classes.PubRoute}>
                 <Heading>Choose your route</Heading>
-                <Route />
+                <Route directionChange={this.directionChangeHandler} directionValue={this.state.direction} />
                 <Button clicked={this.submitRouteHander} text='Select'/>
             </div>
         )

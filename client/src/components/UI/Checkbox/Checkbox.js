@@ -1,10 +1,15 @@
 import React from 'react'
+import classes from './Checkbox.css';
 
 export default (props) => {
-  return (
-    <React.Fragment>
-      <input type="checkbox" id={props.id} name={props.name} value={props.value} />
-      <label for={props.name}>{props.label}</label>
-    </React.Fragment>
-  )
+	return (
+		<div className={classes.Div}>
+			<div className={classes.Labels}>
+				<label htmlFor={props.id}>{props.label}</label>
+			</div>
+			<div>
+				<input type="checkbox" id={props.id} name={props.name} value={props.value} />
+			</div>
+		</div>
+	)
 }

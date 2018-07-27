@@ -1,5 +1,7 @@
 import React from 'react'
 import Pub from './Pub/Pub';
+import FormGroup from '../../UI/FormGroup/FormGroup';
+
 const lookup = require('../../../ref/stationLookup');
 const pubs = require('../../../ref/pubs');
 
@@ -17,6 +19,9 @@ export default () => {
   });
 
   return (
-    pubElems
+    <FormGroup>
+      <p>Stops</p>
+      {pubElems}
+    </FormGroup>
   )
 }

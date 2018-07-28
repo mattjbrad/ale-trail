@@ -33,7 +33,7 @@ export default class TrainInfo extends Component {
 		axios.get(`/lookup/${routeHash}`)
 			.then((res) => {
 				if (res.data){
-					this.setState({route:res.data.route, direction: res.data.dir});
+					this.setState({route:res.data.route, dir: res.data.dir});
 				}
 			}).catch((err) => {
 				console.log(err);

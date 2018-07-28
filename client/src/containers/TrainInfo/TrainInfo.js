@@ -29,21 +29,22 @@ export default class TrainInfo extends Component {
 		return this.props.location.pathname.slice(7, this.props.location.pathname.length);
 	}
 
-	setRouteData = (routeHash) => {
+	setRouteData = (routeHash, callback) => {
 		axios.get(`/lookup/${routeHash}`)
 			.then((res) => {
 				if (res.data){
 					this.setState({route:res.data.route, dir: res.data.dir});
 				}
+				callback();
 			}).catch((err) => {
 				console.log(err);
+				callback();
 			})
 	}
 
 	componentDidMount = () => {
 		const routeHash = this.getURLHash();
-		this.setRouteData(routeHash);
-		this.getLocationHandler();
+		this.setRouteData(routeHash, this.getLocationHandler);
 	}
 
 	currentStopChangedHandler = (event) => {
@@ -120,7 +121,7 @@ export default class TrainInfo extends Component {
 
 	getLocationHandler = () => {
 		this.setState({loadingLocation:true})
-		location.checkLocation((nearest) => {
+		location.checkLocation(this.state.route, (nearest) => {
 			this.setState({currentStop:nearest.loc}, () => {
 				this.setState({loadingLocation:false})
 			});
@@ -134,7 +135,6 @@ export default class TrainInfo extends Component {
 		} else {
 			trains = <Trains data={this.state.trains} />
 		}
-
 		let currentLocation;
 		if(this.state.currentStop){
 			let toggleText = 'Incorrect?';
@@ -184,7 +184,9 @@ export default class TrainInfo extends Component {
 				</div>
 				<div>
 					<a href="/">
-						<Button ><i className="far fa-edit"></i></Button>
+						<Button >
+							<i className="far fa-edit"></i>
+						</ Button>
 					</a>
 				</div>
 			</div>

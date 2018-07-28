@@ -15,20 +15,21 @@ const geoOptions = {
    timeout : 27000
 };
 
-let checkLocation = (callback) => {
+let checkLocation = (route, callback) => {
   if(navigator.geolocation){
-
     navigator.geolocation.getCurrentPosition(
       (myLocation) => {
         let pubDistances = pubLocations.map(function(pubLocation) {
         let pubDistance = {};
-        pubDistance['loc'] = pubLocation.loc;
-        pubDistance['distance'] = distance(
-          myLocation.coords.longitude,
-          myLocation.coords.latitude,
-          pubLocation.lo,
-          pubLocation.la
-        )
+        if (route.includes(pubLocation.loc)){
+          pubDistance['loc'] = pubLocation.loc;
+          pubDistance['distance'] = distance(
+            myLocation.coords.longitude,
+            myLocation.coords.latitude,
+            pubLocation.lo,
+            pubLocation.la
+          )
+        }
         return pubDistance;
         });
     

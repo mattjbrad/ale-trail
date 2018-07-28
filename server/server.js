@@ -89,4 +89,8 @@ app.post('/trains', (request, response) => {
     
 });
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
+
 app.listen(process.env.PORT || 5000, () => console.log('server started listening on', process.env.PORT || 5000));

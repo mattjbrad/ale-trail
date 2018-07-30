@@ -1,0 +1,20 @@
+.Footer {
+    text-align: center;
+    bottom:0;
+    width:100%;
+    height:60px;   /* Height of the footer */
+    margin-top: 20%
+}
+
+.Footer p {
+    font-size:0.6rem;
+    color: #a2abb2;
+}
+
+.Footer p a {
+    color:#8b9399;
+}
+
+.Footer p a:visited {
+    color: #8b9399;
+}

@@ -1,6 +1,5 @@
 import React from 'react'
 import Checkbox from '../../../UI/Checkbox/Checkbox';
-
 export default (props) => {
 	return (
 		<Checkbox

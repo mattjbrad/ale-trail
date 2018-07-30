@@ -36,3 +36,9 @@
 	left: 3px;
 	color: white;
 }
+
+.Checkbox {
+	-webkit-appearance: none;
+	-moz-appearance:    none;
+	appearance:         none;
+  }

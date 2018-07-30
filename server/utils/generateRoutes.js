@@ -1,7 +1,6 @@
 const hash = require('object-hash');
 
 const pubs = ['syb', 'gnf', 'msn', 'swt', 'hud', 'mir', 'dew', 'btl'];
-// const pubs = ['syb', 'gnf', 'msn'];
 
 const getRoutes = (pubs) => pubs.reduce(
         (subsets, value) => subsets.concat(

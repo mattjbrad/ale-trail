@@ -33,7 +33,7 @@ export default (props) => {
 
   let countdown;
   if(props.index===0){
-    countdown = <span className={classes.countDown}>You have <Countdown date={countdownDate} /></span>
+    countdown = <span className={classes.countDown}>You have <Countdown date={countdownDate} /> to drink</span>
   }
 
   return (

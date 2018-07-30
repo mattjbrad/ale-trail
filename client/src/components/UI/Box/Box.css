@@ -20,7 +20,8 @@
     box-shadow: rgba(0.2, 0.2, 0.2, 0.05) 3px 3px;
     box-shadow: rgba(0.2, 0.2, 0.2, 0.05) 6px 6px 8px;
     box-shadow: rgba(0.2, 0.2, 0.2, 0.1) 1px 1px;
-    padding: 5px;
+    padding: 5px 5px 20px 5px;
     color:white;
     font-size: 1.2em;
+    
 }

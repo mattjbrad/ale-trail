@@ -8,6 +8,7 @@
     -o-animation: color-change 5s infinite;
     -ms-animation: color-change 5s infinite;
     animation: color-change 5s infinite;
+    margin-bottom:10px;
 }
 
 @-webkit-keyframes color-change {

@@ -6,7 +6,7 @@ export default (props) => {
 		<div className={classes.Div}>
 			<div className={classes.Labels}>
 				<label htmlFor={props.id}>
-					{props.label}
+					<span>{props.label}</span>
 					<input onChange={props.change} checked={props.checked} type="checkbox" className={classes.Checkbox}id={props.id} name={props.name} value={props.value} />
 				</label>
 			</div>

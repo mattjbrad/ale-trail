@@ -6,7 +6,7 @@
     margin: 0px 10px;
 }
 
-.Checkbox {
+/* .Checkbox {
 	-webkit-appearance: none;
 	background-color: #fafafa;
 	border: 1px solid #cacece;
@@ -28,11 +28,64 @@
 	color: white;;
 }
 
-.Checkbox:checked:after {
+.custom-checkbox span::before {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 0;
+	left: 0;
+	background: #fdfdfd;
+	border: 1px solid #e4e5e7;
+	@include vendorize(box-shadow, inset 2px 2px 0px 0px rgba(0, 0, 0, 0.1));
+  }
+  
+.Checkbox span:after {
 	content: '\2714';
 	font-size: 14px;
 	position: absolute;
 	top: 0px;
 	left: 3px;
 	color: white;
+} */
+
+input[type=checkbox] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
 }
+  
+input[type=checkbox]::-ms-check {
+	display: none;
+}
+
+input[type=checkbox] {
+	position: relative;
+	width: 1em;
+	height: 1em;
+	border: 1px solid gray;
+	/* Adjusts the position of the checkboxes on the text baseline */ 
+	vertical-align: -2px;
+	/* Set here so that Windows' High-Contrast Mode can override */
+	color: green;
+  }
+  
+  input[type=checkbox]::before {
+	content: "✔";
+	position: absolute;
+	font-size: 1.2em;
+	right: 0;
+	top: -0.3em;
+	visibility: hidden;
+  }
+  
+  input[type=checkbox]:checked::before {
+	/* Use `visibility` instead of `display` to avoid recalculating layout */
+	visibility: visible;
+  }
+  
+  input[type=checkbox]:disabled {
+	border-color: black;
+	background: #ddd;
+	color: gray;
+  }

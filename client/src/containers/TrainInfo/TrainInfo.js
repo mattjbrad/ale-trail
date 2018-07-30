@@ -176,7 +176,7 @@ export default class TrainInfo extends Component {
 			<div className={classes.TrainInfo}>
 				{currentLocation}
 				{chooseLocation}
-				<Button clicked={this.getTrainsHandler}>
+				<Button subtext='get trains' clicked={this.getTrainsHandler}>
 					<i className="fas fa-train"></i>
 				</Button>
 				<div className={classes.section}>
@@ -184,7 +184,7 @@ export default class TrainInfo extends Component {
 				</div>
 				<div>
 					<a href="/">
-						<Button >
+						<Button subtext='edit'>
 							<i className="far fa-edit"></i>
 						</ Button>
 					</a>

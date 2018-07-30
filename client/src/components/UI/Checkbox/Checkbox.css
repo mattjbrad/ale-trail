@@ -5,3 +5,9 @@
 .Labels{
     margin: 0px 10px;
 }
+
+@media (max-width:300px){
+	.Div {
+		width:90%;
+	}
+}

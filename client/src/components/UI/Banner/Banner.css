@@ -1,6 +1,7 @@
-.Banner{
+
+.Banner {
     background: #272635;
-    height: 200px;
+    height: 20%;
     color:#F8F8F8;
 }
 
@@ -8,5 +9,21 @@
     margin:0px;
     text-align: center;
     padding: 30px;
-    font-size: 7em;
+    font-size: 7rem;
 }
+
+@media (min-width: 768px) {
+    .Banner h1 {
+        padding: 30px;
+        font-size: 7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .Banner h1 {
+        padding: 15px;
+        font-size: 4.5rem;
+    }
+}
+
+

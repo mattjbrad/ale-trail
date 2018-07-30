@@ -184,7 +184,7 @@ export default class TrainInfo extends Component {
 				</div>
 				<div>
 					<a href="/">
-						<Button subtext='edit'>
+						<Button subtext='edit route'>
 							<i className="far fa-edit"></i>
 						</ Button>
 					</a>

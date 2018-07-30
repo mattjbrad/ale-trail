@@ -83,7 +83,7 @@ export default class PubRoute extends Component {
                     stopValue={this.state.stops}
                 />
                 <Button clicked={this.submitRouteHander} subtext='submit'>
-                    <i class="fas fa-check"></i>
+                    <i className="fas fa-check"></i>
                 </ Button>
             </div>
         )

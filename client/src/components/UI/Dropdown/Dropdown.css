@@ -1,4 +1,4 @@
-.Dropdown{
+.Dropdown {
     font-family:inherit;
     width: 150px;
     background-color: #272635;
@@ -8,4 +8,8 @@
     border: none;
     text-align: center;
     padding: 8px;
+}
+
+.Dropdown:hover {
+    cursor: pointer;
 }

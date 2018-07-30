@@ -141,7 +141,7 @@ export default class TrainInfo extends Component {
 			if (this.state.manualLocationSelect){
 				toggleText = 'Use GPS';
 			}
-			const current = <p className={classes.locationText}>You are currently in <strong>{stationLookup[this.state.currentStop].location}</strong>. <a href="#" onClick={this.toggleStationChooser}>{toggleText}</a></p>
+			const current = <p className={classes.locationText}>You are currently in <strong>{stationLookup[this.state.currentStop].location}</strong>. <a onClick={this.toggleStationChooser}>{toggleText}</a></p>
 			let next;
 			if(this.getNextStation()){
 				next = <p className={classes.locationText}>Your next stop is <strong>{stationLookup[this.getNextStation()].location}</strong></p>

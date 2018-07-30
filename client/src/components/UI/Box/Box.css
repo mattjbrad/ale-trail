@@ -1,12 +1,19 @@
-.Box {
-    width: 30%;
-    min-width: 400px;
-    margin: 20px auto;
+@media (min-width: 430px) {
+    .Box {
+        width: 400px;
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 429px) {
+    .Box {
+        width: 95%;
+        margin: 20px auto;
+    }
 }
 
 .Box div {
     width: 95%;
-    /* border:solid 4px #80c8ff; */
     border-radius: 20px;
     margin: auto;
     background: #272635;

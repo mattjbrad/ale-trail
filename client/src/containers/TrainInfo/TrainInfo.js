@@ -131,7 +131,7 @@ export default class TrainInfo extends Component {
 	render() {
 		let trains;
 		if(this.state.loadingTrains){
-			trains = <Spinner />
+			trains = <Spinner loadingText="Finding trains..."/>
 		} else {
 			trains = <Trains data={this.state.trains} />
 		}
@@ -153,7 +153,7 @@ export default class TrainInfo extends Component {
 				</div>
 			);
 		} else {
-			currentLocation = <Spinner />
+			currentLocation = <Spinner loadingText='Getting current location...'/>
 		}
 
 		let chooseLocation;

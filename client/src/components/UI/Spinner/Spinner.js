@@ -1,7 +1,10 @@
 import React from 'react'
 import classes from './Spinner.css';
-export default () => {
+export default (props) => {
   return (
-    <div className={classes.Spinner}>Loading...</div>
+    <React.Fragment>
+      <p className={classes.LoadingText}>{props.loadingText}</p>
+      <div className={classes.Spinner}></div>
+    </ React.Fragment>
 )
 }

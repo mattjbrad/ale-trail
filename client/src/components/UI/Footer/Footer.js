@@ -6,7 +6,7 @@ export default () => {
     <footer className={classes.Footer}>
         <p>Created by <a href="https://twitter.com/MattJamesBrad">@MattJamesBrad</a>, powered using the National Rail API. I take no responsibility for incorrect information or missed trains!</p>
         <p>Thanks to <a href="https://twitter.com/matthewhaworth">@matthewhaworth</a> for adding GPS functionality in the orginal app. </p>
-        <p>Icon made by <a href="https://smashicons.com/">Smash Icons</a> from <a href="https://www.flaticon.com/">Flaticon</a></p>
+        {/* <p>Icon made by <a href="https://smashicons.com/">Smash Icons</a> from <a href="https://www.flaticon.com/">Flaticon</a></p> */}
     </footer>
   )
 }

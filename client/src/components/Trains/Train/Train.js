@@ -32,7 +32,7 @@ export default (props) => {
   const countdownDate = new Date(`${mm}/${dd}/${yyyy} ${trainTime}`);
 
   let countdown;
-  if(props.index===0){
+  if(props.index===0 && countdownDate > new Date()){
     countdown = <span className={classes.countDown}>You have <Countdown date={countdownDate} /> to drink</span>
   }
 

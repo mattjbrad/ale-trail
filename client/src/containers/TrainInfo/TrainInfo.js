@@ -172,13 +172,17 @@ export default class TrainInfo extends Component {
 			)
 		}
 
+		let getTrainsButton = (
+			<Button subtext='get trains' clicked={this.getTrainsHandler} disabled={this.state.loadingLocation}>
+				<i className="fas fa-train"></i>
+			</Button>
+		);
+	
 		return (
 			<div className={classes.TrainInfo}>
 				{currentLocation}
 				{chooseLocation}
-				<Button subtext='get trains' clicked={this.getTrainsHandler}>
-					<i className="fas fa-train"></i>
-				</Button>
+				{getTrainsButton}
 				<div className={classes.section}>
 					{trains}
 				</div>

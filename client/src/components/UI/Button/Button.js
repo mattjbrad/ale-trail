@@ -11,7 +11,7 @@ export default (props) => {
         );
     }
     return (
-        <button className={classes.Button} onClick={props.clicked}>
+        <button className={classes.Button} onClick={props.clicked} disabled={props.disabled}>
             <div>
                 {props.children}
             </div>

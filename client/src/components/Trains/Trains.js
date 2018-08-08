@@ -6,20 +6,23 @@ export default (props) => {
     const trainData = props.data;
     let trains;
     let display = null;
-    if (trainData.length>0){
-        trains = trainData.map((train, i) => {
-            return <Train key={i} data={train} index={i}/>
-        });
-        display = (
-            <div>
-                <h2>Train Details</h2>
+
+    if (trainData){
+        if (trainData.length>0){
+            trains = trainData.map((train, i) => {
+                return <Train key={i} data={train} index={i}/>
+            });
+            display = (
                 <div>
-                    {trains}
+                    <h2>Train Details</h2>
+                    <div>
+                        {trains}
+                    </div>
                 </div>
-            </div>
-        )
-    } else {
-        display = (<h2>No trains have been found</h2>)
+            )
+        } else if (trainData.length===0){
+            display = (<h2>No trains have been found</h2>)
+        }
     }
 
     return display;

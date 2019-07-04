@@ -14,14 +14,15 @@
 
 .Box div {
     width: 95%;
-    border-radius: 20px;
+    border-radius: 5px;
     margin: auto;
-    background: #272635;
-    box-shadow: rgba(0.2, 0.2, 0.2, 0.05) 3px 3px;
-    box-shadow: rgba(0.2, 0.2, 0.2, 0.05) 6px 6px 8px;
+    background: rgba(46, 24, 59, 0.1);
+    box-shadow: rgba(0.2, 0.2, 0.2, 0.1) 3px 3px;
+    box-shadow: rgba(0.2, 0.2, 0.2, 0.1) 6px 6px 8px;
     box-shadow: rgba(0.2, 0.2, 0.2, 0.1) 1px 1px;
+    box-shadow: rgba(0.2, 0.2, 0.2, 0.16) 4px 4px 6px;
     padding: 5px 5px 20px 5px;
-    color:white;
+    color:#221C27;
     font-size: 1.2em;
     
 }

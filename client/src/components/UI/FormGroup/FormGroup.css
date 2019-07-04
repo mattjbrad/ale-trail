@@ -10,3 +10,12 @@
     font-size: 1.5em;
     margin: 15px;
 }
+
+@media (max-width: 768px) {
+
+    .FormGroup p {
+        font-size: 1.2rem;
+        margin: 10px;
+    }
+
+}

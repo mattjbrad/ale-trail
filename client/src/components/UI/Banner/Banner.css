@@ -1,28 +1,40 @@
 
 .Banner {
-    background: #272635;
-    height: 20%;
-    color:#F8F8F8;
+    /* background: #272635; */
+    /* height: 20%; */
+    /* color:#F8F8F8; */
+    margin: auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Banner img {
+    width: 500px;
+    padding: 20px;
 }
 
 .Banner h1 {
     margin:0px;
     text-align: center;
     padding: 30px;
-    font-size: 7rem;
 }
 
 @media (min-width: 768px) {
     .Banner h1 {
-        padding: 30px;
-        font-size: 7rem;
+        padding: 20px;
+        font-size: 5rem;
     }
 }
 
 @media (max-width: 768px) {
     .Banner h1 {
         padding: 15px;
-        font-size: 4.5rem;
+        font-size: 2rem;
+    }
+
+    .Banner img {
+        width: 400px;
     }
 }
 

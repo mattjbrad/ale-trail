@@ -132,7 +132,7 @@ export default class TrainInfo extends Component {
 		if(this.state.loadingTrains){
 			trains = <Spinner loadingText="Finding trains..."/>
 		} else {
-			trains = <Trains data={this.state.trains} />
+			trains = <Trains data={this.state.trains} lookupData={stationLookup[this.state.currentStop]}/>
 		}
 		let currentLocation;
 		if(this.state.currentStop){
@@ -176,12 +176,26 @@ export default class TrainInfo extends Component {
 				<i className="fas fa-train"></i>
 			</Button>
 		);
+		let navigateToPubButton;
+		if(this.state.currentStop){
+			console.log(stationLookup)
+			navigateToPubButton = (
+				<a target="_blank" href={stationLookup[this.state.currentStop].navigateToPub}>
+					<Button subtext="navigate to pub">
+						<i class="fas fa-directions"></i>
+					</Button>
+				</a>
+			);
+		}
 	
 		return (
 			<div className={classes.TrainInfo}>
 				{currentLocation}
 				{chooseLocation}
-				{getTrainsButton}
+				<div className={classes.Buttons}>
+					{navigateToPubButton}
+					{getTrainsButton}
+				</div>
 				<div className={classes.section}>
 					{trains}
 				</div>

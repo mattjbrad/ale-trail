@@ -19,3 +19,7 @@ a:hover {
     color: #423c46;
     cursor: pointer;
 }
+
+.Buttons Button {
+    margin: 10px;
+}

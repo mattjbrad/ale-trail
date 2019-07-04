@@ -12,7 +12,7 @@ class App extends Component {
 		return (
 			<BrowserRouter>
 				<div className="App">
-					<Banner text="Real Ale Trail" />
+					<Banner text="Ale Trail Planner" />
 					<Route exact path="/" component={PubRoute} />
 					<Route path="/route/:id" component={TrainInfo} />
 					<Footer />

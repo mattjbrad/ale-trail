@@ -193,18 +193,18 @@ export default class TrainInfo extends Component {
 				{currentLocation}
 				{chooseLocation}
 				<div className={classes.Buttons}>
-					{navigateToPubButton}
 					{getTrainsButton}
+					{navigateToPubButton}
 				</div>
 				<div className={classes.section}>
 					{trains}
 				</div>
 				<div>
-					<a href="/">
+					{/* <a href="/">
 						<Button subtext='edit route'>
 							<i className="far fa-edit"></i>
 						</ Button>
-					</a>
+					</a> */}
 				</div>
 			</div>
 		)

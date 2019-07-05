@@ -39,7 +39,7 @@ export default (props) => {
   return (
     <Box>
       <div>
-        <p>The {lookup[props.index]} train is at <strong>{props.data.time}</strong> on <strong>Platform {props.data.platform}.</strong></p>
+        <p>Your {lookup[props.index]} train is at <strong>{props.data.time}</strong> on <strong>Platform {props.data.platform}.</strong></p>
         <span className={classes.warning}>{delay}</span>
         {countdown}
       </div>

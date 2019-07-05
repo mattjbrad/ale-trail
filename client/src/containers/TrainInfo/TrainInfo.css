@@ -23,3 +23,23 @@ a:hover {
 .Buttons Button {
     margin: 10px;
 }
+
+@media (max-width: 768px) {
+    .locationText{
+        font-size: 1.2em;
+    }
+
+    .section {
+        margin: 15px 0px;
+    }
+
+    .Buttons Button {
+        margin: 5px;
+    }
+}
+
+@media (max-width: 400px) {
+    .Buttons Button {
+        margin: 5px;
+    }
+}

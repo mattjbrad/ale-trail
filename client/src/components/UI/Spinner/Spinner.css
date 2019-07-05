@@ -81,5 +81,11 @@
 
 .LoadingText {
   font-size: 1.5rem;
-margin-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+@media (max-width: 768px) {
+  .LoadingText {
+    font-size: 1.2rem;
+  }
 }

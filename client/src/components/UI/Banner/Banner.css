@@ -10,7 +10,7 @@
 }
 
 .Banner img {
-    width: 500px;
+    width: 400px;
     padding: 20px;
 }
 
@@ -34,7 +34,14 @@
     }
 
     .Banner img {
-        width: 400px;
+        width: 300px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .Banner img {
+        width: 200px;
     }
 }
 

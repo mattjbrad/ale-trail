@@ -5,7 +5,7 @@ export default (props) => {
   return (
     <div className={classes.Banner}>
       {/* <h1>{props.text}</h1> */}
-      <img src="/logo4.png"/>
+      <img alt="logo" src="/logo6.png" />
     </div>
   )
 }

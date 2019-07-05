@@ -34,3 +34,9 @@
     background-color: lightgrey;
     color: black;
 }
+
+@media (max-width: 400px) {
+    .Button {
+        margin: 5px;
+    }
+}
